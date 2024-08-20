@@ -21,7 +21,7 @@ git clone https://github.com/bukaleyang/zhongkui-waf.git
 ### 3、拉取docker镜像
 
 ```bash
-docker pull dosoc/zhongkui-waf-alpine:20240819
+docker pull dosoc/zhongkui-waf-alpine:20240820
 ```
 
 ### 4、运行dokcer
@@ -55,7 +55,7 @@ docker-compose.yml
 version: "3"
 services:
     zhongkui-waf:
-        image: dosoc/zhongkui-waf-alpine:20240819
+        image: dosoc/zhongkui-waf-alpine:20240820
         container_name: zhongkui-waf
         restart: unless-stopped
         environment:
@@ -103,7 +103,7 @@ services:
 version: "3"
 services:
     zhongkui-waf:
-        image: dosoc/zhongkui-waf-alpine:20240819
+        image: dosoc/zhongkui-waf-alpine:20240820
         container_name: zhongkui-waf
         restart: unless-stopped
         ports:
