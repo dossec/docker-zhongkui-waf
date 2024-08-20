@@ -73,11 +73,24 @@ services:
             - 3306:3306
 ```
 
+参数说明
+
+- GEOIP_LICENSE_KEY=you key ：请修改为你的GEOIP KEY
+- GEOIP_ACCOUNT_ID=you id：请修改为你的GEOIP ID
+- MYSQL_ROOT_PASSWORD：MySQL root密码
+- ./GeoIP：本地IP数据库目录
+
 运行
 
 ```bash
 docker-compose up -d
 docker-compose ps
+```
+
+如果配置了`GEOIP_LICENSE_KEY`和 `GEOIP_ACCOUNT_ID`，执行以下命令更新IP数据库
+
+```bash
+docker exec zhongkui-waf geoipupdate
 ```
 
 ### 使用mysql5.7
