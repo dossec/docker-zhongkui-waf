@@ -7,7 +7,7 @@ services:
         environment:
             #- GEOIP_LICENSE_KEY=you key
             #- GEOIP_ACCOUNT_ID=you id
-            - MYSQL_HOST=zhongkui-mysql
+            - MYSQL_HOST=127.0.0.1
             - MYSQL_USER=root
             - MYSQL_PASSWORD=6CsIaDsfRike
         volumes:
@@ -30,6 +30,6 @@ services:
             - ./init.sql:/docker-entrypoint-initdb.d/init.sql
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
-        #network_mode: host
-        ports:
-            - 3306:3306
+        network_mode: host
+        #ports:
+        #    - 3306:3306
