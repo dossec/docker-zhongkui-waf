@@ -1,7 +1,7 @@
 version: "3"
 services:
     zhongkui-waf:
-        image: dosoc/zhongkui-waf-alpine:20240820
+        image: dosoc/zhongkui-waf:alpine-20240823
         container_name: zhongkui-waf
         restart: unless-stopped
         environment:
@@ -11,6 +11,7 @@ services:
             - MYSQL_USER=root
             - MYSQL_PASSWORD=6CsIaDsfRike
         volumes:
+            - ./openresty_log:/usr/local/openresty/nginx/logs
             - ./zhongkui-waf:/usr/local/openresty/zhongkui-waf
             - ./GeoIP:/usr/local/share/GeoIP
         network_mode: host
